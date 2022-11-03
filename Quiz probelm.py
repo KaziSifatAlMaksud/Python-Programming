@@ -1,5 +1,14 @@
 """
-s = "abc_1-def_2"
+let,
+String s = "abc_1-def_2"
+to
+dictionary
+d = {
+ "abc" : 1,
+ "def" : 2
+}
+
+
 
 """
 s = "abc_1-def_2"
@@ -16,5 +25,3 @@ for i in range (len(b)):
     if i % 2 == 0:
         d[b[i]] = int(b[i+1])
 print(d)
-print(b)
-print(s)
