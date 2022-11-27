@@ -1,0 +1,19 @@
+<form action="/form" method="post">
+  Number: <input type="text" name="Number" value="{{number}}">
+  <br/>
+  <br/>
+  <button type="submit">Submit</button>
+</form>
+<br/>
+{% if is_post %}
+  {% if is_int %}
+      {% if even %}
+      Even
+      {% else %}
+      Odd
+      {% endif %}
+
+  {% else %}
+      Please enter a valid number
+  {% endif %}
+{% endif %}
