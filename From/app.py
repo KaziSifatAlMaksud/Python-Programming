@@ -40,5 +40,32 @@ def same_form():
         age = from_data['age']
         is_post = True
     return render_template("same_from.html",**locals())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/even_odd',methods=['GET',"POST"])
+def even_odd():
+    if request.method =='POST':
+        form_data = request.form
+        try:
+            number = int(form_data['number'])
+        except ValueError:
+            print("Enter a valid number")
+    return render_template("even_odd.html",**locals())
 if __name__ == '__main__':
     app.run(host="127.0.0.1",port=5004)
