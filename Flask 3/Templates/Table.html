@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Print table</title>
+</head>
+<body>
+<table style="border:1px solid black;">
+    <tr>
+        {% for key,i in d.items():%}
+        <td style="border:1px solid black;"><h3>{{key}}</h3></td>
+        <td style="border:1px solid black;"><h3>{{d[key]}}</h3></td>
+    </tr>
+
+
+{% endfor %}
+</table>
+
+
+</body>
+</html>
