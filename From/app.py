@@ -20,7 +20,7 @@ def form():
             even = False
             if number%2 == 0:
                 even = True
-    return render_template("form.html", **locals())
+    return render_template("form", **locals())
 
 @app.route('/name_age',methods=['GET',"POST"])
 def name_age():
@@ -60,12 +60,17 @@ def same_form():
 
 @app.route('/even_odd',methods=['GET',"POST"])
 def even_odd():
+    int_sub = False
     if request.method =='POST':
+        int_sub = True
+        even = False
         form_data = request.form
         try:
-            number = int(form_data['number'])
+            n = int(form_data['number'])
+            if n % 2 == 0:
+                even = True
         except ValueError:
-            print("Enter a valid number")
+            s = "Enter a valid number"
     return render_template("even_odd.html",**locals())
 if __name__ == '__main__':
     app.run(host="127.0.0.1",port=5004)

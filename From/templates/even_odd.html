@@ -1,8 +1,18 @@
 <form action="/even_odd" method="post">
-    Enter Any Number: <input type="text" name="number">
+    Enter Any Number: <input type="text" name="number" value="{{ n}}">
     <button type="submit"> Submit </button>
 </form>
 
 
 <br>
 <br>
+{% if int_sub %}
+
+    {% if even %}
+        <h1> Even Number</h1>
+        <h1> {{ n }}</h1>
+    {% else %}
+        <h1> Odd Number</h1>
+        <h1> {{ n }}</h1>
+    {% endif %}
+{% endif %}
