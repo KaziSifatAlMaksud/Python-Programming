@@ -1,0 +1,17 @@
+<form action = "/form/" method="POST">
+    Search <input type="text" name="name">
+    <button type="submit"> Search </button>
+</form>
+
+<br>
+<br>
+<table>
+    {% for i in range(0, l, 4) %}
+    <tr>
+        <th> {{ a[i] }}</th>
+        <th> {{ a[i + 1] }}</th>
+        <th> {{ a[i + 2] }}</th>
+        <th> {{ a[ i+ 3] }}</th>
+    </tr>
+    {% endfor %}
+</table>
