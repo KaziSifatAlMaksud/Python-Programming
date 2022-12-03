@@ -1,0 +1,14 @@
+<form action = "/form/" method="POST">
+    Search <input type="text" name="id" value="{{ user_id }}">
+    <button type="submit"> Search </button>
+</form>
+
+<br>
+<br>
+{% if post_in %}
+    {% if find_da %}
+        {{  m_marks }}
+    {% else %}
+     Not Find
+    {% endif %}
+{% endif %}
