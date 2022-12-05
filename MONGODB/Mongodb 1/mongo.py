@@ -8,12 +8,12 @@ f = open("student.txt").readlines()
 for line in f:
     line = line.replace("/n", "")
     tokens = line.split(", ")
-    student = dict()
+    student = {}
     student["name"] = tokens[0]
     student["age"] = tokens[1]
     student["department"] = tokens[2]
     student["university"] = tokens[3]
 
-db.student_info.delete_one({"name": "bob"})
-for student in db.student_info.find({"name":"bob"}):
+db.student_info.insert_one({"name":"mithun","age":25,"department":"CSE","university":"EWU"})
+for student in db.student_info.find({"name":"mithun"}):
     print(student)
