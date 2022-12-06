@@ -14,6 +14,7 @@ for line in f:
     student["department"] = tokens[2]
     student["university"] = tokens[3]
 
-db.student_info.insert_one({"name":"mithun","age":25,"department":"CSE","university":"EWU"})
+#db.student_info.insert_one({"name":"mithun","age":25,"department":"CSE","university":"EWU"})
+#db.student_info.delete_one({"name":"mithun"})
 for student in db.student_info.find({"name":"mithun"}):
     print(student)
