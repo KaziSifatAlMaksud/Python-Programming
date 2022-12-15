@@ -17,8 +17,11 @@ def singup():
         mobile = form_data["mobile"]
         u_pass = form_data["password"]
         re_pass = form_data["re_password"]
-        d = {"name": name , "email":email ,"mobile":mobile ,"password":re_pass}
-        x = mycol.insert_one(d)
+        if u_pass == re_pass:
+            d = {"name": name , "email":email ,"mobile":mobile ,"password":re_pass}
+            x = mycol.insert_one(d)
+        else:
+            passmess = "Password is not match"
     return render_template("singup.html",**locals())
 @app.route('/login',methods=["GET","POST"])
 def login():
