@@ -12,10 +12,13 @@ def hello_world():
 def singup():
     if request.method == "post":
         form_data = request.form()
-        username = form_data["username"]
+        name = form_data["username"]
         email = form_data["email"]
-        password = form_data["password"]
-        re_password = form_data["re_password"]
+        mobile = form_data["mobile"]
+        u_pass = form_data["password"]
+        re_pass = form_data["re_password"]
+        d = {"name": name,"email":email,"mobile": mobile,"password":re_pass}
+        x = mycol.insert_one(d)
     return render_template("singup.html",**locals())
 @app.route('/login',methods=["GET","POST"])
 def login():
