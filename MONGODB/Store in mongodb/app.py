@@ -35,7 +35,7 @@ def regestation():
         user_d["mobile"]= user_mobile
         user_d["pass"] = user_pass
         user_d["re_pass"] =user_re_pass
-        #mycol.insert_one(user_d)
+        mycol.insert_one(user_d)
         return render_template("login.html",**locals())
     return render_template("regestation.html",**locals())
 
