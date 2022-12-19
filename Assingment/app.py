@@ -5,9 +5,7 @@ mycliend = pymongo.MongoClient("mongodb://localhost:27017/assingment")
 mydb = mycliend["usersingup"]
 mycol = mydb["data"]
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+
 @app.route('/singup',methods=["GET","POST"])
 def singup():
     if request.method == "POST":
@@ -22,8 +20,9 @@ def singup():
             x = mycol.insert_one(d)
         else:
             passmess = "Password is not match"
+
     return render_template("singup.html",**locals())
-@app.route('/login',methods=["GET","POST"])
+@app.route('/',methods=["GET","POST"])
 def login():
     if request.method == "POST":
         form_data = request.form
@@ -33,9 +32,17 @@ def login():
         if user_name is None:
             email_mess = "Email was not register, Please Sign Up"
         user_passw = mycol.find_one({"password": passw})
+
         if user_passw is None:
             pass_mess = "Password not Correct, Try Again "
+        if user_passw is not None:
+            profile_name = user_passw["name"]
+            mobile_number = user_passw["mobile"]
+            email_address = user_passw["email"]
+            return render_template("Profile.html", **locals())
     return render_template("login.html",**locals())
-
+@app.route('/profile')
+def profile():
+    return render_template("Profile.html",**locals())
 if __name__ == '__main__':
     app.run(debug=True)
