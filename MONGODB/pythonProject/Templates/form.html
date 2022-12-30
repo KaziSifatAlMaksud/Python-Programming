@@ -1,0 +1,31 @@
+<style>
+    table, th, td {
+  border: 1px solid;
+}
+</style>
+<form action="/form/" method="post">
+    ID: <input type="txt" name="id" value="{{user_id}}">
+    <br><br>
+
+    Marks: <input type="number" name="marks"  value="{{User_marks}}">
+    <button type="submit">Submit</button>
+</form>
+
+<br>
+<br>
+<table>
+    <tr>
+        <th> ID: </th>
+        <th>Marks:</th>
+    </tr>
+    {% for q in range(l)%}
+    <tr>
+        <td>
+            {{ ids[q] }}
+        </td>
+        <td>
+            {{m[q]}}
+        </td>
+    </tr>
+    {%endfor%}
+</table>

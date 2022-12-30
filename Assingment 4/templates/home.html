@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  </head>
+  <body class="container-sm"style="background-color: #144272;color: #fff">
+
+<form action='/home/'  method="POST"><br>
+
+      <label for="exampleInputEmail1" class="form-label display-6">Search tittle:</label><br>
+
+    <input  class="form-control" type="text" name="tittle" value="{{ tittle }}"><br>
+    <button class="btn btn-primary" type="submit">Search</button>
+     <a style="text-decoration: none" href="/insert/" class="btn btn-primary" >Insert Blog</a>
+</form>
+
+{% if isPost %}
+    {% if find is not none %}
+     <h1 style="text-align:center" class="display-6">Search Result:</h1>
+
+       <table class="table table-hover table-dark" >
+  <thead>
+   <tr>
+        <th>Tittle:</th>
+        <th>Content:</th>
+        <th>Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+           {% for x in range(l)%}
+    <tr>
+        <td> {{ arry[x]['tittle'] }}</td>
+        <td> <p> {{ arry[x]['content'] }}</p></td>
+        <td><a class="btn btn-primary"  href="{{ url_for('upload', id=arry[x]['_id']) }}">Edit</a>
+            <br>
+            <br>
+
+        <a class="btn btn-outline-primary" href="{{ url_for('home', id=arry[x]['_id']) }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+        {% endif %}
+{% else %}
+    {{ 'Try again with valid tittle' }}
+{% endif %}
+  </tbody>
+</table>
+
+
+
+
+
+{% if havePost == True %}
+    <h1 style="text-align: center;" class="display-4">All Blog:</h1>
+
+
+    <table class="table table-hover table-dark">
+  <thead>
+   <tr>
+        <th>Tittle:</th>
+        <th>Content:</th>
+        <th>Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+       {% for i in list %}
+            <tr>
+                <td>
+                    {{ i['tittle'] }}
+                </td>
+                <td>
+                    <p>{{ i['content'] }}</p>
+                </td>
+                <td>  <a class="btn btn-primary" href="{{ url_for('upload', id=i['_id']) }}">Edit</a><br><br>
+                    <a  class="btn btn-outline-primary" href="{{ url_for('home', id=i['_id']) }}">Delete</a></td>
+
+            </tr>
+            {% endfor %}
+{% endif %}
+
+  </tbody>
+</table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
