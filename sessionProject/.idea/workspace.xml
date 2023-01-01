@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77aa61ba-143a-40a8-aeb0-8516c933abfe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Session/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session/templates/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session/templates/protected.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../session1/templates/lgoin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/.idea/Assignment1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/templates/insert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assingment 4/templates/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectasdnfioaifjig" beforeDir="false" afterPath="$PROJECT_DIR$/../projectasdnfioaifjig" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Jj0La9pTzHFA0HBFVTGMWCP2Yd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77aa61ba-143a-40a8-aeb0-8516c933abfe" name="Changes" comment="" />
+      <created>1672576129783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672576129783</updated>
+      <workItem from="1672576133244" duration="25000" />
+    </task>
+    <servers />
+  </component>
+</project>
