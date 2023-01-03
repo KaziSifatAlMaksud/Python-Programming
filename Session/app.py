@@ -1,22 +1,34 @@
 from flask import Flask, session, render_template, redirect, request, g, url_for
-
+import pymongo
 import os
-
 app = Flask(__name__)
-
-app.secret_key = os.urandom(24)
+app.secret_key = "sifat"
+myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
+mydb = myClined["gShop"]
+mycol = mydb["user"]
+shopProduct = mydb["producat"]
+contactMess = mydb["contact"]
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST':
-        session.pop('user', None)
-
-        if request.form['password'] == 'password':
-            session['user'] = request.form['username']
-            return redirect(url_for('protected'))
-
-    return render_template('index.html')
+    if request.method == "POST":
+        form_data = request.form
+        username = form_data["email"]
+        password = form_data["pass"]
+        session['user'] = username
+        for x in mycol.find({"email": username}):
+            for y in mycol.find({"re_pass": password}):
+                print(username)
+                session['user'] = username
+                return redirect(url_for('protected'))
+                message = "Hello "+ username
+                print(message)
+                return render_template('calculator.html', **locals())
+        message = "Username or password is incorrect"
+        print(message)
+        return render_template('calculator.html', **locals())
+    return render_template('index.html',**locals())
 
 
 @app.route('/protected')
@@ -29,7 +41,6 @@ def protected():
 @app.before_request
 def before_request():
     g.user = None
-
     if 'user' in session:
         g.user = session['user']
 
