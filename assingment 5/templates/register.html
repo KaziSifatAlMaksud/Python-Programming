@@ -1,0 +1,32 @@
+<form action="/">
+    <input type="text" name="username" id="user_name" placeholder="Username">
+    <br>
+<br>
+<input type="password" name="pass" id="user_pass" placeholder="Password"> <br>
+
+<br>
+<input type="password" name="c_pass" id="user_pass_2" placeholder="Confirm Password"> <br>
+<br>
+<input type="email" name="email" id="user_email" placeholder="Email"> <br> <br>
+<input type="text" name="phone" id="user_phone" placeholder="Phone"> <br> <br>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"> </p>
+</form>
+<script>
+function loadDoc() {
+  console.log("clicked")
+  const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+    const text = document.getElementById("demo").innerHTML = this.responseText;
+    console.log(text)
+  }
+  xhttp.open("POST", "/");
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  var username = document.getElementById("user_name").value;
+  var pass = document.getElementById("user_pass").value;
+  var c_pass = document.getElementById("user_pass_2").value;
+  var email = document.getElementById("user_email").value;
+  var phone = document.getElementById("user_phone").value;
+  xhttp.send("username="+ username+"&pass="+pass+"&pass2="+c_pass+"&email="+email+"&phone="+phone);
+}
+</script>
