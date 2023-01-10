@@ -7,12 +7,23 @@
 <body>
 <form action="/form" method="POST">
     input <br>
-    <input type="text" name="input" id="input">
-    <button type="submit" >Submit</button>
+    <input type="text" name="input" id="inputs">
+    <button type="button" onclick="loadDoc()" >Submit</button>
     <p id="demo"></p>
 </form>
 <script>
-    const xhttp = new XMLHttpRequest()
+    function loadDoc(){
+        const xhttp = new XMLHttpRequest();
+        console.log("cliced")
+        xhttp.onload = function () {
+            document.getElementById("demo").innerText = this.responseText;
+        }
+
+        xhttp.open("POST","/form");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var input = document.getElementById("inputs").value;
+        xhttp.send('input='+input);
+    }
 </script>
 </body>
 </html>
