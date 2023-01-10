@@ -11,8 +11,16 @@ def form():
     if request.method == "POST":
         form_data = request.form
         input = form_data["input"]
-        if input is not None:
-            return input
+        number = form_data["number"]
+        if input:
+            return "input is :" + input
+        if number:
+            return "Number is :" + number
+
+        else:
+            return "numbar is: "+ number +"input is:" +input
+
+
     return render_template("form.html",**locals())
 
 

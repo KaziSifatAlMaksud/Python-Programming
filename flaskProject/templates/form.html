@@ -8,21 +8,24 @@
 <form action="/form" method="POST">
     input <br>
     <input type="text" name="input" id="inputs">
+    <p id="demo">NO text is here</p>
+    <input type="number" name="number" id="number">
     <button type="button" onclick="loadDoc()" >Submit</button>
-    <p id="demo"></p>
+    <p id="demo1">NO text is here</p>
 </form>
 <script>
     function loadDoc(){
         const xhttp = new XMLHttpRequest();
-        console.log("cliced")
         xhttp.onload = function () {
             document.getElementById("demo").innerText = this.responseText;
+            document.getElementById("demo1").innerText = this.responseText;
         }
 
         xhttp.open("POST","/form");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         var input = document.getElementById("inputs").value;
-        xhttp.send('input='+input);
+        var number = document.getElementById("number").value;
+        xhttp.send('input='+input +'&number='+ number);
     }
 </script>
 </body>
